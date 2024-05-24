@@ -1,5 +1,4 @@
 ![github-badge](https://github.com/faidhi066/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
-)
 
 # learn-cicd-starter (Notely)
 
