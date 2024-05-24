@@ -18,9 +18,6 @@ jobs:
         with:
           go-version: "1.22"
 
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
       - name: Unit Testing
         run: go test ./... -cover
 
@@ -29,3 +26,25 @@ jobs:
 
       - name: Gosec Testing
         run: gosec ./...
+
+  style:
+    name: Style Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.22"
+
+      - name: Run go fmt
+        run: go fmt ./...
+
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+
+      - name: Run staticcheck
+        run: staticcheck ./...
