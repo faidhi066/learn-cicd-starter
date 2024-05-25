@@ -24,7 +24,7 @@ jobs:
       - id: "auth"
         uses: google-github-actions/auth@v2
         env:
-          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GCP: ${{ secrets.GCP_CREDENTIALS }}
         with:
           credentials_json: $GCP_CREDENTIALS
 
